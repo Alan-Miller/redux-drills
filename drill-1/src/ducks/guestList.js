@@ -3,7 +3,7 @@ const REMOVE_GUEST = 'REMOVE_GUEST';
 const EDIT_GUEST = 'EDIT_GUEST';
 
 const initialState = {
-  guests: ['Tony Stark', 'Steve Rodgers', ' Nick Fury', 'Natasha Romanova', 'Clint Barton', 'Bruce Banner', 'Wanda Maximoff']
+  guests: ['Pumpkin King', 'Glitterbot', 'Headless Horse']
 };
 
 export function addGuest(guest) {
@@ -37,7 +37,10 @@ export default function reducer(state = initialState, action) {
     case REMOVE_GUEST:
       return Object.assign({}, state, {guests: state.guests.filter((guest, i) => i !== action.payload)});
     case EDIT_GUEST:
-      return Object.assign({}, state, {});
+      // console.log('reducer\'s EDIT_GUEST payloads: ', action.payload.guest, action.payload.index);
+      // return Object.assign({}, state, {guests: [...state.guests, action.payload.guest]});
+      state.guests.splice(action.payload.index, 1, action.payload.guest)
+      return Object.assign({}, state, {guests: state.guests});
     default:
       return state;
     }

@@ -1,4 +1,6 @@
 import { createStore } from 'redux';
-import guestlist_reducer from './ducks/guestList';
+import guestReducer from './ducks/guestList.js';
 
-export default createStore(guestlist_reducer);
+const store = createStore(guestReducer);
+console.log('Store state:', store.getState());
+export default store;

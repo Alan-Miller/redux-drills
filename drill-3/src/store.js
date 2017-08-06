@@ -1,4 +1,4 @@
-import { createStore } from 'redux';
-import guestlist_reducer from './ducks/guestList';
+import {createStore} from 'redux';
+import guestList_reducer from './ducks/guestList';
 
-export default createStore(guestlist_reducer);
+export default createStore(guestList_reducer)
